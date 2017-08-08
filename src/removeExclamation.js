@@ -1,3 +1,4 @@
+console.log("removeExclamation.js")
 // Remove all exclamation marks from sentence 
 // but ensure a exclamation mark at the end of string. 
 // For a beginner kata, you can assume that the input 
@@ -16,3 +17,8 @@
 function remove(s){
   return s.replace(/!/g, "").concat("!")
 }
+
+
+//test
+let x = remove("Hi!!!")
+console.log(x)
