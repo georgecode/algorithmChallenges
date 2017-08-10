@@ -17,10 +17,17 @@ console.log("removeExclamation1.js")
 // }
 
 
-// es6
+// es6 if
 function remove(s){
   return s.endsWith('!') === true ? s.slice(0,s.length-1) : s 
 }
+
+
+// // best way
+// function remove(s){
+//   return s.replace( /!$/, '') 
+// }
+
 
 console.log(remove("Hi!")) //"Hi"
 console.log(remove("Hi!!!")) //"Hi!!"
