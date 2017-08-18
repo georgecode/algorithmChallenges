@@ -6,14 +6,6 @@ console.log("sumOfIntegersInString.js")
 // in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", 
 // the sum of the integers is 3635.
 
-
-// var funcParam5 = function(name){
-// 	return name.split("")
-// };
-
-// //es6
-// let funcParam6 = (name) => name.split("");
-
 //es6
 function sumOfIntegersInString(s){
 	return s.split(/[\D]+/g)
@@ -23,12 +15,6 @@ function sumOfIntegersInString(s){
 	.map((num) => parseInt(num))
 	.reduce((total,num)=>total+num, 0)
 }//sumOfIntegersInString
-
-
-
-
-
-
 
 
 // //es5
