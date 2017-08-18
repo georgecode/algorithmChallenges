@@ -25,3 +25,9 @@ console.log(multiply(10)) //250
 console.log(multiply(200)) //25000
 console.log(multiply(0)) //0
 console.log(multiply(-3)) //-15	
+
+
+
+let square = (num) => {return Math.pow(num,2)}
+
+console.log(square(3))
