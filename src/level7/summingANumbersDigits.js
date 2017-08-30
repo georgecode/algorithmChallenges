@@ -5,23 +5,12 @@ console.log("summingANumbersDigits.js")
 // value of each of the number's decimal digits. 
 
 function sumDigits(number) {
-
 	
-
 	return Math.abs(number)
 	.toString()
 	.split('')
 	.map((num)=> Number(num))
 	.reduce((sum,value) => sum+value, 0)
-	// let array =number.toString().split('')
-
-	// if(array[0] == "-"){
-	// 	array.shift()
-	// 	array[0]= "-" + array[0]
-	// }
-
-	// return array.map((num) => Number(num))
-	// .reduce((sum,value) => sum+value , 0)
 }
 
 
