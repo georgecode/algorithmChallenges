@@ -44,7 +44,7 @@ function blackFriday(year) {
 
 }//END blackFriday
 
-
+//NOTES
 //needs to be 4
 
 // BLACK FRIDAY is the fourth Friday of November
