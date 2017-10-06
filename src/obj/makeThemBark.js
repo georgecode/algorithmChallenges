@@ -2,6 +2,8 @@
 //$ babel makeThemBark.js | node
 //The .bark() method of a dog should return the string 'Woof!'.
 
+//challenge and solution
+
 console.log("makeThemBark")
 
 function Dog(name, breed, sex, age){
