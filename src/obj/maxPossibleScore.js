@@ -1,4 +1,4 @@
-//maxPossibleScore
+//maxPossibleScore challenge
 //$ babel maxPossibleScore.js | node
 
 
@@ -26,7 +26,31 @@ console.log("maxPossibleScore!!!")
 //Example: maxPossibleScore({"a": 1, "b": 2, "c": 3}, ["a", "c"]); // 1 * 2 + 2 + 3 * 2 = 10
 
 function maxPossibleScore(obj, arr) {
-	
+	let sum = 0;
+
+	//fix's silly requirement that wasen't mentioned!!
+	//apparently questions ARE NOT type sensitive
+	arr = arr.map(function(val){
+		return val.toString()
+	})
+
+	for(var key in obj){
+		if(arr.includes(key)){
+			obj[key] = obj[key]*2
+		}
+	}
+
+	for(var key in obj){
+		sum+=obj[key]
+	};
+
+
+	return sum;
+
 }
 
 console.log(maxPossibleScore({"a": 1, "b": 2, "c": 3}, ["a", "c"]))//10
+
+
+
+
