@@ -14,8 +14,12 @@ console.log("buildingStringsFromaHash.js!!!!!")
 // solution({a: 1, b: '2'}) // should return "a = 1,b = 2"
 
 function solution(pairs){
+	let str =""
+	for(key in pairs){
+		str+= key + " = " + pairs[key] + ','
+	}
   // TODO: complete
-  return "Hellloooo!!!"
+  return str.slice(0,-1)
 }
 
 console.log(solution({a: 1, b: '2'}))// "a = 1,b = 2"
