@@ -11,11 +11,19 @@ console.log("convertHashToArray.js")
 // to this
 //  [["name", "Jeremy"], ["age", 24], ["role", "Software Engineer"]]
 
+//Must be in ABC order
+
 function convertHashToArray(hash){
-	
-	return "hello"
-  //your code here - sort the keys!
+
+	let arr = [];
+	Object.keys(hash)
+	      .sort()
+	      .forEach(function(v) {
+	          arr.push([v, hash[v]])
+	       });
+	return arr
+
 }
 
-let testHash = {name: 'Jeremy', age: 24, role: 'Software Engineer'}
+let testHash = {name: 'Jeremy', zoo: 'San Fran', age: 24, role: 'Software Engineer'}
 console.log(convertHashToArray(testHash))
