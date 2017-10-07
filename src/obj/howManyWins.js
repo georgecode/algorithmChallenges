@@ -30,7 +30,15 @@ const winnerList1 = [
 
 
 function countWins(winnerList, country) {
-	return "hellllooooo!!!"
+	let totalWins = 0;
+	winnerList.forEach(function(obj){
+		if(obj.country === country){
+			totalWins+=1
+		}
+
+	})
+		
+	return totalWins
 }
 
 console.log(countWins(winnerList1, "Spain"))//9
