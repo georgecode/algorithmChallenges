@@ -63,10 +63,10 @@ const moveVowel = (input) =>{
 	return cArr.join('')+vArr.join('')
 }
 
-console.log(moveVowel("day"))//dya
-console.log(moveVowel("apple"))//pplae
-console.log(moveVowel("peace"))//pceae
-console.log(moveVowel("maker"))//mkrae
+// console.log(moveVowel("day"))//dya
+// console.log(moveVowel("apple"))//pplae
+// console.log(moveVowel("peace"))//pceae
+// console.log(moveVowel("maker"))//mkrae
 
 
 
@@ -84,10 +84,40 @@ console.log(moveVowel("maker"))//mkrae
 
 
 
-// remember("apple") => returns ["p"]
-// remember("apPle") => returns []          // no repeats, "p" != "P"
-// remember("pippi") => returns ["p","i"]   // show "p" only once
-// remember('Pippi') => returns ["p","i"]   // "p" is repeated first
+// function remember(str) {
+
+// }
+
+
+// var str = "Hello World";
+// str = str.slice(0, 3) + str.slice(4);
+//str.slice(beginIndex[, endIndex])
+const remember =(str) =>{
+	let arr =[]
+	for(let i = 0;i<str.length;i++){
+		let sliceStr = str.slice(0,i)+str.slice(i+1,str.length)
+		// console.log(str.slice(0,i)+str.slice(i+1,str.length))
+		// console.log(str)
+		let test = new RegExp("3")
+		//var regex = new RegExp("ReGeX" + testVar + "ReGeX");
+		console.log(sliceStr)
+		if(sliceStr.search(/[3]/) == -1 ){
+			console.log('no 3!!!')
+			arr.push(str[i])
+
+		}else{
+			console.log('it has a 3!!')
+			
+		}
+	}
+	return arr
+}
+
+console.log(remember("12345"))
+// console.log(remember("apple"))//["p"]
+// console.log(remember("apPle"))//[]    // no repeats, "p" != "P"
+//console.log(remember("pippi"))//["p","i"]   // show "p" only once
+// console.log(remember('Pippi'))//["p","i"]   // "p" is repeated first
 
 
 
