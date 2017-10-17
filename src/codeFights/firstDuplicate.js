@@ -41,7 +41,15 @@ console.log("firstDuplicate.js!!!")
 
 
 function firstDuplicate(a) {
-	return "hello"
+    let newArr=[];
+    let dups=[];
+    a.forEach((i)=>{
+
+        newArr.includes(i)? dups.push(i):null
+        newArr.push(i)
+    })
+
+    return dups.length != 0 ? dups[0]: -1
     
 }
 
