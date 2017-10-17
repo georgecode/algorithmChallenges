@@ -8,7 +8,21 @@ console.log("sortTheVowels.js!!!!!")
 // }
 
 const sortVowels = (s)=>{
- return "hello"
+	let newStr = ''
+
+	if(typeof s === 'string'){
+	
+		s.split('').forEach((i) =>{
+
+		let isVowel = i.search(/[aeiou]/i);
+
+			isVowel === -1?newStr+= (i+"|"+"\n") 
+			: newStr+= ("|" +i+"\n") 
+		})
+	}
+
+	newStr = newStr.replace(/\s*$/,"");
+	return newStr
 }
 
 
