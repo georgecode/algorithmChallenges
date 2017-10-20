@@ -14,10 +14,48 @@ console.log("createAHouseCleaningRota.js!!!")
 // than 7, duplicates are allowed.
 
 
+//NOTES
+//Needs to return an array of 7
+//Duplicates only allowed if the input is less than 7
 
-function rota(rooms) {
- console.log("hello")
+// randomize array by array length
+
+
+// function rota(rooms) {
+// 	let randArr=[]
+
+// 	while (randArr.length<7){
+// 		let randIndex = Math.floor(Math.random()*rooms.length)
+// 		if(!randArr.includes(rooms[randIndex])){
+// 			randArr.push(rooms[randIndex])
+// 		}else{
+
+// 			randArr.length>=rooms.length?randArr.push(rooms[randIndex]):null
+// 		}
+		
+// 	}
+
+//  return randArr
+// }
+
+
+
+
+const rota =(rooms)=>{
+	let randArr=[]
+
+	while (randArr.length<7){
+		let randIndex = Math.floor(Math.random()*rooms.length)
+		if(!randArr.includes(rooms[randIndex])){
+			randArr.push(rooms[randIndex])
+		}else{
+			randArr.length>=rooms.length?randArr.push(rooms[randIndex]):null
+		}		
+	}
+
+ 	return randArr
 }
+
 
 console.log(rota(["One", "Two", "Three", "Four", "Five", "Six", "Seven"]))//[ 'Three', 'Six', 'Four', 'Five', 'Two', 'One', 'Seven' ]
 console.log(rota(["One", "Two", "Three"]))//[ 'One', 'Three', 'Two', 'One', 'Two', 'Three', 'One' ]
