@@ -32,10 +32,46 @@ console.log("grabCSVColumns.js!!!!!")
 // csvColumns( "a,b,c,d,e\n1,2,3,4,5\nf,g,h,i,j" , [1, 3, 5, 7] ) => returns "b,d\n2,4\ng,i"
 
 
-function csvColumns(csv, indices){
-  return "hello"
+// function csvColumns(csv, indices){
+//   csv = csv.split("\n")
+//   let arr =[]
+//   csv.forEach((i)=>{
+//   	arr.push((i.split(',')))
+//   })
+
+//   let str =""
+//   arr.forEach((i)=>{
+//   	str+="\n"
+//   	indices.forEach((j)=>{
+//   		i[j]!= undefined ? str+=(i[j]) + ",":null
+//   	})//end j
+//   	str = str.slice(0,str.length-1)
+//   })//end i
+//   return str.slice(1,str.length)
+// }
+
+
+const csvColumns = (csv, indices) =>{
+  csv = csv.split("\n")
+  let arr =[]
+  csv.forEach((i)=>{
+  	arr.push((i.split(',')))
+  })
+
+  let str =""
+  arr.forEach((i)=>{
+  	str+="\n"
+  	indices.forEach((j)=>{
+  		i[j]!= undefined ? str+=(i[j]) + ",":null
+  	})//end j
+  	str = str.slice(0,str.length-1)
+  })//end i
+  return str.slice(1,str.length)
 }
 
-console.log(csvColumns("1,2\n3,4\n5,6", [5, 6, 7]))//""
 console.log(csvColumns("1,2,3\n4,5,6" , [0, 1]))//"1,2\n4,5"
+console.log("##########################\n")
+console.log(csvColumns("1,2\n3,4\n5,6", [5, 6, 7]))//""
+
+
 //console.log(csvColumns())
