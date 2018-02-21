@@ -53,6 +53,10 @@ function values(high){
 		for(let j=i;j<squares.length;j++){
 			count+=1
 			num+=squares[j]
+			//_______________---------________------
+
+			//isPalindrome(num)
+
 			if(palindrome.includes(num)&& count>1){
 				palAndSumOfSquare.push(num)
 
