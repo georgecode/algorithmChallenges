@@ -7,10 +7,9 @@ console.log("fallingSpeed.js")
 // Write a function that receives the speed (in cm/s) of a petal as input, 
 // and returns the time it takes for that petal to reach the ground from the same branch.
 
-function sakuraFall(v) {
-  return v
-  // your code here
-}
+
+const sakuraFall = (v)=>{return v <= 0 ? 0: 400/v}
+
 
 console.log(sakuraFall(5))//80
 console.log(sakuraFall(10))//40
