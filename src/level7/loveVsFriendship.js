@@ -12,11 +12,13 @@ console.log("loveVsFriendship.js")
 
 // The input will always be in lowercase and never be empty.
 
-function wordsToMarks(string){
-	return string	
-  //your code here
+const wordsToMarks=(string)=>{
+	let total =0;
+	for(var i =0;i<string.length;i++){
+		total+=string.charCodeAt(i)-96
+	}
+	return total	
 }
-
 
 console.log(wordsToMarks("attitude"))//100
 console.log(wordsToMarks("friends"))//75
