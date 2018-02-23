@@ -13,27 +13,6 @@
 
 console.log("secondaryVsPrincipalDiagonal.js")
 
-// function diagonal(matrix){
-// 	let pd=0;
-// 	let sd=0;
-// 	for(let i=0;i<matrix.length;i++){
-// 		pd+=matrix[i][i]
-// 		sd+=matrix[i][matrix[i].length-1-i]
-// 	}
-
-// 	if(pd>sd){
-// 		return "pd wins"
-// 	}else if(pd<sd){
-// 		return "sd wins"
-// 	}else{
-// 		return "tie"
-// 	}
-// 	// console.log(pd)
-// 	// return sd
-// }
-
-
-
 const diagonal =(matrix)=>{
 	let pd=0;
 	let sd=0;
