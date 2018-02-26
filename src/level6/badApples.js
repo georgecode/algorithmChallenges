@@ -48,11 +48,52 @@ console.log("badApples.js")
 // 4.There can be packages with the same variety of apples, e.g [1,1], this is not a problem.
 
 
-function badApples(input) {
-	return input
-//code
 
+
+function badApples(input) {
+	let final=[]
+
+	for(let i =0;i<input.length;i++){
+		if(input[i][0]!=0&&input[i][1]!=0){
+			final.push(input[i])
+		}
+		else if(input[i][0]!=0||input[i][1]!=0){
+			for(let j= i+1;j<input.length;j++){
+				if(input[j][0]!=0 && input[j][1]!=0){
+					//Do Nothing 
+					//This is ugly but my timer was runnig out
+				}
+				else if(input[j][0]!=0 || input[j][1]!=0 ){
+					let newArray = input[i].concat(input[j])
+					final.push(newArray.filter(num=>num>0))
+					input[j]=[0,0] 
+					j=input.length+1
+				}			
+			}//end for j
+		}
+	}//end for i
+	return final
 }
+
+
+
+// var array1 = ['a', 'b', 'c'];
+// var array2 = ['d', 'e', 'f'];
+
+// console.log(array1.concat(array2));
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
+//code
+let inputT=[[0,0],
+			[0,0],
+			[0,1],
+			[0,0],
+			[0,0],
+			[0,3],
+			[2,2],
+			[1,3],
+			[0,4],
+			[2,2],
+			[3,3]]//[1,3],[2,2],[1,3],[2,2],[3,3]
 
 let input1=[[0,0],
 			[0,0],
@@ -77,6 +118,7 @@ let input3 =[[1,3],
 			 [0,3],
 			 [7,6]]
 
+console.log(badApples(inputT))//[]
 console.log(badApples(input1))//[]
 console.log(badApples(input2))//[[1,3],[7,6],[7,2],[1,3],[2,3],[4,5],[7,6]]
 console.log(badApples(input3))//[[1,3],[7,6],[7,2],[1,3],[1,3],[4,5],[7,6]]
