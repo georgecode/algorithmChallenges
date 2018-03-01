@@ -15,10 +15,27 @@ console.log("nameToMatrix.js")
 
 
 const matrixfy = str => {
-	return str
-  // code here
+	if(str.length==0){
+		return 'name must be at least one letter'
+	}
+	if(str.length==1){
+		return [str.split('')]
+	}
+
+	let size = Math.ceil(Math.sqrt(str.length));
+	let add=  Math.pow(size,2)-str.length;
+	for(let i=0;i<add;i++){
+		str=str+="."
+	}
+	let regexSplit = new RegExp(".{1,"+size+"}","g");
+	str =str.match(regexSplit);
+
+	const matrix = str.map(x => x.split(""));
+
+	return matrix
 };
 
 console.log(matrixfy('Franklin'))//[['F', 'r', 'a'], ['n', 'k', 'l'], ['i', 'n', '.']]
 console.log(matrixfy('A'))//[['A']]
 console.log(matrixfy(''))//'name must be at least one letter'
+console.log(matrixfy('Jo'))//
