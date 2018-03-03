@@ -2,6 +2,7 @@
 
 console.log("missingArithmetic.js")
 
+//Find the missing term in an Arithmetic Progression
 
 // An Arithmetic Progression is defined as one 
 // in which there is a constant difference between 
@@ -20,9 +21,52 @@ console.log("missingArithmetic.js")
 
 
 
-var findMissing = function (list) {  
-  return list;
+var findMissing = function (list) {
+	let listRev = list.slice().reverse()
+	let diffArr =[]  
+	for(let i =0;i<list.length-1;i++){
+		diffArr.push(listRev[i]-listRev[i+1])
+	}
+	
+	let diff = Math.min(...diffArr)
+
+	//for negative nums
+	if(diff<0){
+		diff =Math.max(...diffArr)
+	}
+	//console.log(diff)
+	//console.log(list)
+
+	for(let i=0;i<list.length;i++){
+		if(list[i]+diff!= list[i+1]){
+			return list[i]+diff
+		}
+	}
 }
 
 
 console.log(findMissing([1, 3, 4]))//2
+console.log(findMissing([1, 2, 4]))//3
+
+console.log(findMissing([ 6, 1, -4, -9, -14, -24, -29, -34, -39, -44 ]))//-19
+
+
+console.log(findMissing([ -2, -3, -4, -5, -7 ]))//-6
+// console.log(findMissing())//
+// console.log(findMissing())//
+// console.log(findMissing())//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
