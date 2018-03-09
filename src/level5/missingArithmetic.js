@@ -34,8 +34,6 @@ var findMissing = function (list) {
 	if(diff<0){
 		diff =Math.max(...diffArr)
 	}
-	//console.log(diff)
-	//console.log(list)
 
 	for(let i=0;i<list.length;i++){
 		if(list[i]+diff!= list[i+1]){
