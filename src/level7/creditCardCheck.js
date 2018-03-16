@@ -20,11 +20,46 @@ console.log("creditCardCheck.js")
 // | VISA       | 4                    | 13 or 16      |
 
 
+//answer != null? array.push("1"):array.push("0")
+
 function getIssuer(number) {
-	return number
-  // Code your solution here
+	numStr=number.toString()
+	if(numStr.length == 15){
+		if(numStr.slice(0,2)=="34" || numStr.slice(0,2)=="37"){
+			return "AMEX"
+		}
+	}
+
+	else if(numStr.length == 16){
+		if(numStr.slice(0,4)==6011){
+			return "Discover"
+		}
+		else if(numStr.slice(0,2)>=51 && numStr.slice(0,2)<=55){
+			return "Mastercard"
+		}
+		else if(numStr.slice(0,1)==4){
+			return "VISA"
+		}
+
+	}
+
+	else if(numStr.length == 13 && numStr.slice(0,1)==4){
+		return "VISA"
+	}
+
+	return "Unknown"
 }
 
+
+//MUCH BETTER WAY
+// function getIssuer(n) {
+//   var s = n.toString();
+//   if (/^3[4|7]\d{13}$/.test(s)) return "AMEX";
+//   if (/^6011\d{12}$/.test(s)) return "Discover";
+//   if (/^5[1-5]\d{14}$/.test(s)) return "Mastercard";
+//   if (/^4(\d{12}|\d{15})$/.test(s)) return "VISA";
+//   return "Unknown";
+// }
 
 console.log(getIssuer(4111111111111111))//VISA
 console.log(getIssuer(378282246310005))//AMEX
